@@ -1,0 +1,7 @@
+cluster.name: docker-oneweb
+ 
+node.name: docker-oneweb-node-1
+ 
+path.data: /opt/oneweb/data
+ 
+network.host: 0.0.0.0
