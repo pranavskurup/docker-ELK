@@ -6,7 +6,8 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt-get install -y wget
 
-RUN useradd -d /opt/oneweb -m oneweb
+RUN useradd -d /opt/oneweb -m RUN oneweb 
+RUN su oneweb
 WORKDIR /opt/oneweb
 
 RUN \
