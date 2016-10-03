@@ -19,4 +19,4 @@ RUN \
  chown -R oneweb:oneweb elasticsearch-2.1.1
 
 ADD elasticsearch.yml /opt/oneweb/elasticsearch-2.1.1/config/elasticsearch.yml
-ENTRYPOINT elasticsearch-2.1.1/bin/elasticsearch
+ENTRYPOINT su oneweb && elasticsearch-2.1.1/bin/elasticsearch
