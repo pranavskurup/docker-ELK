@@ -1,2 +1,3 @@
 java_image:
     build: java/
+    container_name: oneweb:java
