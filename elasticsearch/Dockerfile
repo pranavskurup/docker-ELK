@@ -1,4 +1,4 @@
-FROM dockerfile/java:oracle-java8
+FROM  java:8u102-jdk
 MAINTAINER Pranav S Kurup
 
 ENV DEBIAN_FRONTEND noninteractive
