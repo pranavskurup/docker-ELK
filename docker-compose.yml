@@ -1,2 +1,3 @@
 oneweb_elasticsearch_image:
     build: elasticsearch/
+    container_name: oneweb_elasticsearch_container
