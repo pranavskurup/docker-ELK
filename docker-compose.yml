@@ -1,3 +1,2 @@
-java7_image:
-    build: java7/
-    create_only: true
+oneweb_elasticsearch_image:
+    build: elasticsearch/

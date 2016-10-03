@@ -1,4 +1,4 @@
-FROM ubuntu:15.10
+FROM dockerfile/java:oracle-java8
 MAINTAINER Pranav S Kurup
 
 ENV DEBIAN_FRONTEND noninteractive
