@@ -9,3 +9,25 @@ oneweb_logstash_image:
     user: oneweb
     links:
       - oneweb_elasticsearch_image
+
+oneweb_kibana_image:
+    build: kibana/
+    container_name: oneweb_kibana_container
+    user: oneweb
+    links:
+      - oneweb_elasticsearch_image
+
+oneweb_filebeat_image:
+    build: filebeat/
+    container_name: oneweb_filebeat_container
+    user: oneweb
+    links:
+      - oneweb_logstash_image
+
+oneweb_sdk_image:
+    build: oneweb/
+    container_name: oneweb_sdk_container
+    ports:
+        - "80:80"
+    links:
+        - oneweb_logstash_image
