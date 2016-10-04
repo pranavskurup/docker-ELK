@@ -1,6 +1,5 @@
 oneweb_elasticsearch_image:
     build: elasticsearch/
-    user: oneweb
     volumes:
       - /root/docker-ELK/data/es:/opt/oneweb/data
 

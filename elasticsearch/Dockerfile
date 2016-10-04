@@ -11,7 +11,6 @@ RUN useradd -d /opt/oneweb -m oneweb
 RUN su oneweb
 
 WORKDIR /opt/oneweb
-RUN mkdir /opt/oneweb/data/docker-oneweb -p
 
 RUN \
  wget https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.1.1/elasticsearch-2.1.1.tar.gz && \
@@ -20,4 +19,4 @@ RUN \
  chown -R oneweb:oneweb /opt/oneweb/
 
 ADD elasticsearch.yml /opt/oneweb/elasticsearch-2.1.1/config/elasticsearch.yml
-ENTRYPOINT elasticsearch-2.1.1/bin/elasticsearch
+ENTRYPOINT elasticsearch-2.1.1/bin/elasticsearch  -Des.insecure.allow.root=true
