@@ -4,6 +4,6 @@ oneweb_elasticsearch_image:
     user: oneweb
 
 oneweb_logstash_image:
-    build: elasticsearch/
+    build: logstash/
     container_name: oneweb_logstash_container
     user: oneweb
