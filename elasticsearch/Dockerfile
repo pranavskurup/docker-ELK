@@ -11,7 +11,7 @@ RUN useradd -d /opt/oneweb -m oneweb
 RUN su oneweb
 
 WORKDIR /opt/oneweb
-RUN mkdir /opt/oneweb/data
+RUN mkdir /opt/oneweb/data/docker-oneweb -p
 
 RUN \
  wget https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.1.1/elasticsearch-2.1.1.tar.gz && \
