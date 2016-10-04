@@ -7,3 +7,5 @@ oneweb_logstash_image:
     build: logstash/
     container_name: oneweb_logstash_container
     user: oneweb
+    links:
+      - oneweb_elasticsearch_container
