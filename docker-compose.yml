@@ -1,18 +1,20 @@
 oneweb_elasticsearch_image:
     build: elasticsearch/
     user: oneweb
+    volumes:
+      - /root/docker-ELK/data/es:/opt/oneweb/data
 
 oneweb_logstash_image:
     build: logstash/
     user: oneweb
+    volumes:
+      - /root/docker-ELK/data/ls/wget/events:/home/esuser/events.log
     links:
       - oneweb_elasticsearch_image
 
 oneweb_kibana_image:
     build: kibana/
     user: oneweb
-    volumes:
-      - /root/docker-ELK/data:/opt/oneweb/data
     ports:
       - "5601:5601"
     links:
@@ -28,7 +30,7 @@ oneweb_sdk_image_1:
     build: oneweb/
     
     volumes:
-      - /root/docker-ELK/nginx-log-1:/var/log/nginx
+      - /root/docker-ELK/data/nginx-log-1:/var/log/nginx
     ports:
       - "8080:80"
     links:
@@ -37,7 +39,7 @@ oneweb_sdk_image_1:
 oneweb_sdk_image_2:
     build: oneweb/
     volumes:
-      - /root/docker-ELK/nginx-log-2:/var/log/nginx
+      - /root/docker-ELK/data/nginx-log-2:/var/log/nginx
     ports:
       - "8081:80"
     links:
