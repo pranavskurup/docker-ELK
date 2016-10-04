@@ -6,12 +6,6 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update
 RUN apt-get install -y wget
 
-RUN useradd -d /opt/oneweb -m oneweb
-
-RUN su oneweb
-
-WORKDIR /opt/oneweb
-
 RUN wget -q http://nginx.org/keys/nginx_signing.key -O- | apt-key add -
 RUN echo deb http://ppa.launchpad.net/nginx/stable/ubuntu wily main && /etc/apt/sources.list
 RUN echo deb-src http://ppa.launchpad.net/nginx/stable/ubuntu wily main && /etc/apt/sources.list
