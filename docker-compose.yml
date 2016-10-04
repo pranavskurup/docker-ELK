@@ -8,4 +8,4 @@ oneweb_logstash_image:
     container_name: oneweb_logstash_container
     user: oneweb
     links:
-      - oneweb_elasticsearch_container
+      - oneweb_elasticsearch_image
