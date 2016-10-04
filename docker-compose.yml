@@ -14,6 +14,8 @@ oneweb_kibana_image:
     build: kibana/
     container_name: oneweb_kibana_container
     user: oneweb
+    ports:
+        - "5601:5601"
     links:
       - oneweb_elasticsearch_image
 
